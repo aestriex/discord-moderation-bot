@@ -6,6 +6,9 @@ const { promisify } = require("util");
 const { glob } = require("glob");
 const PG = promisify(glob);
 
+require("./Handlers/Events")(client, PG)
+
+
 client.once("ready", () => {
     console.log(`Client is online!`);
 });
